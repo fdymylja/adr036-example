@@ -1,0 +1,102 @@
+{
+	"info": {
+		"_postman_id": "6fe31f35-f09b-42b3-a836-f15ca74c9fad",
+		"name": "adr",
+		"schema": "https://schema.getpostman.com/json/collection/v2.1.0/collection.json"
+	},
+	"item": [
+		{
+			"name": "verify",
+			"protocolProfileBehavior": {
+				"disableBodyPruning": true
+			},
+			"request": {
+				"method": "GET",
+				"header": [
+					{
+						"key": "Content-Type",
+						"value": "application/json",
+						"type": "text"
+					}
+				],
+				"body": {
+					"mode": "raw",
+					"raw": "{\"body\":{\"messages\":[{\"@type\":\"/\",\"Signer\":\"cosmos1346fyal5a9xxwlygkqmkkqf7g3q3zwzpdmkam8\",\"Data\":\"aGVsbG8=\"}],\"memo\":\"\",\"timeout_height\":\"0\",\"extension_options\":[],\"non_critical_extension_options\":[]},\"auth_info\":{\"signer_infos\":[{\"public_key\":{\"@type\":\"/cosmos.crypto.secp256k1.PubKey\",\"key\":\"A+FkzsHk5mVRk8IkVq5p0XapCrqu1MFf8KT594BtN6ss\"},\"mode_info\":{\"single\":{\"mode\":\"SIGN_MODE_DIRECT\"}},\"sequence\":\"0\"}],\"fee\":{\"amount\":[],\"gas_limit\":\"0\",\"payer\":\"\",\"granter\":\"\"}},\"signatures\":[\"NfESYrFMzKaSq+In01Z2/ZYghUk6k1eTH6EYz5NGcwsNhabK7fuz2ZBpe11t6PNbmPmBbSrOh1BvZHHiiFr3FA==\"]}"
+				},
+				"url": {
+					"raw": "localhost:8080/verify",
+					"host": [
+						"localhost"
+					],
+					"port": "8080",
+					"path": [
+						"verify"
+					]
+				}
+			},
+			"response": []
+		},
+		{
+			"name": "verify not valid",
+			"protocolProfileBehavior": {
+				"disableBodyPruning": true
+			},
+			"request": {
+				"method": "GET",
+				"header": [
+					{
+						"key": "Content-Type",
+						"value": "application/json",
+						"type": "text"
+					}
+				],
+				"body": {
+					"mode": "raw",
+					"raw": "{\"body\":{\"messages\":[{\"@type\":\"/\",\"Signer\":\"cosmos1346fyal5a9xxwlygkqmkkqf7g3q3zwzpdmkam8\",\"Data\":\"ZGF0YQ==\"}],\"memo\":\"\",\"timeout_height\":\"0\",\"extension_options\":[],\"non_critical_extension_options\":[]},\"auth_info\":{\"signer_infos\":[{\"public_key\":{\"@type\":\"/cosmos.crypto.secp256k1.PubKey\",\"key\":\"A+FkzsHk5mVRk8IkVq5p0XapCrqu1MFf8KT594BtN6ss\"},\"mode_info\":{\"single\":{\"mode\":\"SIGN_MODE_DIRECT\"}},\"sequence\":\"0\"}],\"fee\":{\"amount\":[],\"gas_limit\":\"0\",\"payer\":\"\",\"granter\":\"\"}},\"signatures\":[\"pSz+zrzoTZPWpBV57IK8O7ECkIH5Kt0Wse+TerbvsZx7vwns7GY0+dwsA8SuNDqmx0uwr+VRARcb+E9u1BXhkA==\"]}",
+					"options": {
+						"raw": {
+							"language": "json"
+						}
+					}
+				},
+				"url": {
+					"raw": "localhost:8080/verify",
+					"host": [
+						"localhost"
+					],
+					"port": "8080",
+					"path": [
+						"verify"
+					]
+				}
+			},
+			"response": []
+		},
+		{
+			"name": "sign",
+			"protocolProfileBehavior": {
+				"disableBodyPruning": true
+			},
+			"request": {
+				"method": "GET",
+				"header": [],
+				"body": {
+					"mode": "raw",
+					"raw": "{\"private_key\":\"47DEQpj8HBSa+/TImW+5JCeuQeRkm5NMpJWZG3hSuFY=\", \"data\": \"hello\"}"
+				},
+				"url": {
+					"raw": "localhost:8080/sign",
+					"host": [
+						"localhost"
+					],
+					"port": "8080",
+					"path": [
+						"sign"
+					]
+				}
+			},
+			"response": []
+		}
+	],
+	"protocolProfileBehavior": {}
+}
